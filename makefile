@@ -8,8 +8,7 @@ composer:
 	@composer install
 
 docker-compose:
-	@#docker-compose up -d
-	@docker-compose --env-file .env.dev.local up -d database
+	@docker-compose --env-file .env.dev.local up -d
 
 start-server:
 	@echo "-----------> Lancement du server"
@@ -29,3 +28,6 @@ db-create:
 db-drop:
 	@echo "-----------> Suppression de la base"
 	@php bin/console doctrine:database:drop --force
+
+cache-clear:
+	php bin/console c:c
